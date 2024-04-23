@@ -14,7 +14,7 @@ Paste the website link in the webbaseloader func
 
 Paste pdf files into the the docs_dir 
 
-You are ready to use not only the pdf file but also the website to ask questions about both.
+```streamlit run Assignment.py``` You are ready to use not only the pdf file but also the website to ask questions about both.
 
 
 
