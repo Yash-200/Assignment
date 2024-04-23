@@ -23,20 +23,19 @@ def process_pdf_files(folder_path):
                 return page
 
 
-process_pdf_files("/home/yash/Desktop/Internship_Assignment/fepw1dd")
 if "vector" not in st.session_state:
     st.session_state.embeddings=OllamaEmbeddings(model = "tinyllama",
 )
     st.session_state.loader=WebBaseLoader("https://www.basicphone.in/")
     st.session_state.docs=st.session_state.loader.load()
-    st.session_state.docs.append(process_pdf_files("/home/yash/Desktop/Internship_Assignment/fepw1dd"))
+    st.session_state.docs.append(process_pdf_files("/fepw1dd"))
 
     st.session_state.text_splitter=RecursiveCharacterTextSplitter(chunk_size=1000,chunk_overlap=200)    
     st.session_state.final_documents=st.session_state.text_splitter.split_documents(st.session_state.docs[:])
     st.session_state.vectors=FAISS.from_documents(st.session_state.final_documents,st.session_state.embeddings)
 
 st.title("ChatGroq Demo")
-llm=ChatGroq(groq_api_key="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",
+llm=ChatGroq(groq_api_key="groq_api_key",
              model_name="mixtral-8x7b-32768")
 
 prompt=ChatPromptTemplate.from_template(
