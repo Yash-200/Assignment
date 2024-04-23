@@ -8,7 +8,6 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains import create_retrieval_chain
 from langchain_community.vectorstores import FAISS
-import time
 from langchain_community.document_loaders import PyPDFLoader
 
 
@@ -56,9 +55,7 @@ retrieval_chain = create_retrieval_chain(retriever, document_chain)
 prompt=st.text_input("Input you prompt here")
 
 if prompt:
-    start=time.process_time()
     response=retrieval_chain.invoke({"input":prompt})
-    print("Response time :",time.process_time()-start)
     st.write(response['answer'])
 
     with st.expander("Document Similarity Search"):
