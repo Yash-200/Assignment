@@ -1,5 +1,5 @@
 # SiteSage: LLM-Powered Chatbot for Websites -Genesis
-```git clone https://github.com/Yash-200/Assignment.git```
+```git clone https://github.com/Yash-200/SiteSage.git```
 
 cd into Assignment Dir
 
